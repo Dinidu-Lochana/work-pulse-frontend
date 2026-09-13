@@ -140,6 +140,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @utility status-approved { background: oklch(0.94 0.03 255); color: oklch(0.43 0.13 255); }
 @utility status-submitted { background: oklch(0.95 0.025 250); color: oklch(0.49 0.16 255); }
 @utility status-correction { background: oklch(0.955 0.015 260); color: oklch(0.46 0.04 260); }
+@utility status-draft { background: oklch(0.94 0.006 255); color: oklch(0.52 0.02 260); }
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes dashboard-in { from { opacity: 0; transform: perspective(1400px) rotateY(-2deg) rotateX(1deg) translateY(20px); } to { opacity: 1; transform: perspective(1400px) rotateY(-2deg) rotateX(1deg) translateY(0); } }
