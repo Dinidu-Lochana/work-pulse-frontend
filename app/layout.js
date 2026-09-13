@@ -1,5 +1,6 @@
 import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/lib/auth-context";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -24,7 +25,9 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${dmSans.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }
