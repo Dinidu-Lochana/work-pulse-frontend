@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Activity,
   ArrowRight,
@@ -310,9 +311,9 @@ export function WorkPulseHome() {
           <nav aria-label="Primary navigation" className="hidden items-center gap-7 md:flex">
             <a href="#features" className="nav-link">Features</a>
             <a href="#how-it-works" className="nav-link">How It Works</a>
-            <a href="#login" className="nav-link">Login</a>
+            <Link href="/login" className="nav-link">Login</Link>
             <Button asChild variant="hero" size="sm">
-              <a href="#get-started">Get Started <ArrowRight /></a>
+              <Link href="/register">Get Started <ArrowRight /></Link>
             </Button>
           </nav>
           <Button
@@ -326,10 +327,10 @@ export function WorkPulseHome() {
           </Button>
           {menuOpen && (
             <nav className="absolute left-5 right-5 top-16 rounded-lg border border-hero-border bg-hero-raised p-3 shadow-hero md:hidden" aria-label="Mobile navigation">
-              {[["Features", "#features"], ["How It Works", "#how-it-works"], ["Login", "#login"], ["Get Started", "#get-started"]].map(([label, href]) => (
-                <a key={label} href={href} onClick={closeMenu} className="block rounded-md px-3 py-3 text-sm font-medium text-hero-muted hover:bg-hero-soft hover:text-hero-foreground">
+              {[["Features", "#features"], ["How It Works", "#how-it-works"], ["Login", "/login"], ["Get Started", "/register"]].map(([label, href]) => (
+                <Link key={label} href={href} onClick={closeMenu} className="block rounded-md px-3 py-3 text-sm font-medium text-hero-muted hover:bg-hero-soft hover:text-hero-foreground">
                   {label}
-                </a>
+                </Link>
               ))}
             </nav>
           )}
@@ -346,7 +347,7 @@ export function WorkPulseHome() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
-                <a href="#get-started">Get Started <ArrowRight /></a>
+                <Link href="/register">Get Started <ArrowRight /></Link>
               </Button>
               <Button asChild variant="heroOutline" size="xl">
                 <a href="#dashboard">View Dashboard <ChevronRight /></a>
@@ -431,12 +432,12 @@ export function WorkPulseHome() {
             </p>
           </div>
           <Button asChild variant="hero" size="xl">
-            <a href="#login">Get Started <ArrowRight /></a>
+            <Link href="/register">Get Started <ArrowRight /></Link>
           </Button>
         </div>
       </section>
 
-      <footer id="login" className="bg-black text-white">
+      <footer className="bg-black text-white">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-8 sm:flex-row">
             <div>
@@ -444,10 +445,10 @@ export function WorkPulseHome() {
               <p className="mt-3 text-sm text-white/70">Weekly reporting and team insights, simplified.</p>
             </div>
             <nav aria-label="Footer navigation" className="flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-white/70">
-              {["Login", "Register", "Dashboard", "Reports"].map((link) => (
-                <a key={link} href={link === "Dashboard" ? "#dashboard" : "#top"} className="transition-colors hover:text-white">
+              {[["Login", "/login"], ["Register", "/register"], ["Dashboard", "/dashboard"], ["Reports", "/reports"]].map(([link, href]) => (
+                <Link key={link} href={href} className="transition-colors hover:text-white">
                   {link}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
